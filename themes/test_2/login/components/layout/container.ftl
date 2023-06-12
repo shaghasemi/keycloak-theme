@@ -1,6 +1,6 @@
 <#macro kw>
     <div class=" min-h-screen sm:py-16 flex items-center justify-center items-center"
-         style="background-image: url(https://i.postimg.cc/sgccZmRQ/back.png);background-size: cover;">
+         style="background-color: #FAFAFD">
         <div class="w-fit flex justify-center items-center w-full p-5 relative mx-auto my-auto rounded-xl shadow-lg bg-white"
              style="width: auto;padding: 49px;">
             <div class="items-center justify-center flex space-between"

@@ -576,8 +576,16 @@ select {
     align-items: center
 }
 
+.items-end {
+    align-items: end
+}
+
 .justify-center {
     justify-content: center
+}
+
+.justify-right {
+    justify-content: right;
 }
 
 .justify-between {
@@ -716,6 +724,10 @@ select {
 
 .text-center {
     text-align: center
+}
+
+.text-right {
+    text-align: right;
 }
 
 .text-xl {
