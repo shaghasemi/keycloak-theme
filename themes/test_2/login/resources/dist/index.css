@@ -10,7 +10,7 @@
 
 html {
     -webkit-text-size-adjust: 100%;
-    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    font-family: "Yekan Bakh FaNum", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
     line-height: 1.5;
     -moz-tab-size: 4;
     -o-tab-size: 4;
@@ -48,7 +48,8 @@ b, strong {
 }
 
 code, kbd, pre, samp {
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+    /*font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;*/
+    font-family: IranNastaliq;
     font-size: 1em
 }
 
