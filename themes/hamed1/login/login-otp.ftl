@@ -5,20 +5,15 @@
 <#import "components/link/secondary.ftl" as linkSecondary>
 <#import "components/radio/primary.ftl" as radioPrimary>
 
-<@layout.registrationLayout
-displayMessage=!messagesPerField.existsError("totp")
-;
-section
->
+<@layout.registrationLayout displayMessage=!messagesPerField.existsError("totp");section>
+    <div style="display: flex; ">
+        <img src="${url.resourcesPath}/dist/img/logo_full.png"
+             alt="senaam logo" style="float: right; margin: 0;">
+    </div>
     <#if section="header">
         ${msg("doLogIn")}
     <#elseif section="form">
-        <form
-                action="${url.loginAction}"
-                class="m-0 space-y-4"
-                method="post"
-
-        >
+        <form action="${url.loginAction}" class="m-0 space-y-4" method="post">
             <#if otpLogin.userOtpCredentials?size gt 1>
                 <div class="flex items-center space-x-4">
                     <#list otpLogin.userOtpCredentials as otpCredential>
@@ -27,8 +22,7 @@ section
                         id="kw-otp-credential-${otpCredential?index}"
                         name="selectedCredentialId"
                         tabIndex="${otpCredential?index}"
-                        value="${otpCredential.id}"
-                        >
+                        value="${otpCredential.id}">
                             ${otpCredential.userLabel}
                         </@radioPrimary.kw>
                     </#list>
