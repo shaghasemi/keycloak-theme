@@ -1,6 +1,6 @@
 <#macro kw>
   <footer class="space-y-4">
-<#--    <#nested>-->
-    footerrrrrr
+    <#nested>
+<#--    footerrrrrr-->
   </footer>
 </#macro>

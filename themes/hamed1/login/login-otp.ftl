@@ -38,6 +38,10 @@
                 >
                     <@labelTotp.kw />
                 </@inputPrimary.kw>
+                <div class="space-y-4">
+                    <#--    <#nested>-->
+                    footerrrrrr
+                </div>
             </div>
             <div class="pt-4" style="display: flex;justify-content: center;align-items: center;">
                 <@buttonPrimary.kw
