@@ -7,6 +7,7 @@
              alt="senaam logo" style="float: right; margin: 0;">
       </div>
     </div>
-    ${msg("authenticatorCode")} *
+<#--    <br>-->
+<#--    ${msg("authenticatorCode")} *-->
   </#compress>
 </#macro>

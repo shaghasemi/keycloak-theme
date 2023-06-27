@@ -34,6 +34,9 @@ showAnotherWayIfPresent=true
                         <#nested "header">
                     </@subtitle.kw>
                 <#else>
+                    <@subtitle.kw>
+                        <#nested "header">
+                    </@subtitle.kw>
                     <@username.kw />
                 </#if>
             </@cardHeader.kw>

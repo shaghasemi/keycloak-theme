@@ -38,6 +38,7 @@ section
                     name="username"
                     type="text"
                     value=(login.username)!''
+                    hint="usernameOrEmail"
                     >
                         <@labelUsername.kw />
                     </@inputPrimary.kw>
