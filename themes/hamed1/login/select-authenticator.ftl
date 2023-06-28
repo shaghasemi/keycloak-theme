@@ -1,4 +1,6 @@
-<#import "template.ftl" as layout>
+<#--<#import "template.ftl" as layout>-->
+<#--<#import "template_2.ftl" as layout>-->
+<#import "template_base.ftl" as layout>
 <#import "components/button/primary.ftl" as buttonPrimary>
 
 <@layout.registrationLayout displayInfo=false; section>
@@ -13,19 +15,21 @@
             ${msg("loginChooseAuthenticator")}
         </#if>
     <#elseif section = "form">
-
-        <form id="kc-select-credential-form" class="${properties.kcFormClass!}" action="${url.loginAction}" method="post">
+        <form id="kc-select-credential-form"
+              class="${properties.kcFormClass!}"
+              action="${url.loginAction}"
+              method="post">
             <div class="${properties.kcSelectAuthListClass!}">
                 <#list auth.authenticationSelections as authenticationSelection>
-                    <div class="${properties.kcSelectAuthListItemClass!}" onclick="fillAndSubmit('${authenticationSelection.authExecId}')">
+                    <div class="${properties.kcSelectAuthListItemClass!}"
+                         onclick="fillAndSubmit('${authenticationSelection.authExecId}')">
 
-                        <div class="${properties.kcSelectAuthListItemIconClass!}">
+                        <@buttonPrimary.kw type="submit">
+                            ${msg(authenticationSelection.helpText)}
+                        </@buttonPrimary.kw>
+
+                        <#--<div class="${properties.kcSelectAuthListItemIconClass!}">
                             <i class="${properties['${authenticationSelection.iconCssClass}']!authenticationSelection.iconCssClass} ${properties.kcSelectAuthListItemIconPropertyClass!}"></i>
-                        </div>
-                        <div class="pt-4">
-                            <@buttonPrimary.kw name="login" type="submit">
-                                ${msg("doSubmit")}
-                            </@buttonPrimary.kw>
                         </div>
                         <div class="${properties.kcSelectAuthListItemBodyClass!}">
                             <div class="${properties.kcSelectAuthListItemHeadingClass!}">
@@ -38,10 +42,10 @@
                         <div class="${properties.kcSelectAuthListItemFillClass!}"></div>
                         <div class="${properties.kcSelectAuthListItemArrowClass!}">
                             <i class="${properties.kcSelectAuthListItemArrowIconClass!}"></i>
-                        </div>
+                        </div>-->
                     </div>
                 </#list>
-                <input type="hidden" id="authexec-hidden-input" name="authenticationExecution" />
+                <input type="hidden" id="authexec-hidden-input" name="authenticationExecution"/>
             </div>
         </form>
 
