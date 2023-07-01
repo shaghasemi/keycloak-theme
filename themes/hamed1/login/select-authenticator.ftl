@@ -3,52 +3,56 @@
 <#import "template_base.ftl" as layout>
 <#import "components/button/primary.ftl" as buttonPrimary>
 
-<@layout.registrationLayout displayInfo=false; section>
-    <#if section = "header" || section = "show-username">
-        <script type="text/javascript">
-            function fillAndSubmit(authExecId) {
-                document.getElementById('authexec-hidden-input').value = authExecId;
-                document.getElementById('kc-select-credential-form').submit();
-            }
-        </script>
-        <#if section = "header">
-            ${msg("loginChooseAuthenticator")}
-        </#if>
-    <#elseif section = "form">
-        <form id="kc-select-credential-form"
-              class="${properties.kcFormClass!}"
-              action="${url.loginAction}"
-              method="post">
-            <div class="${properties.kcSelectAuthListClass!}">
-                <#list auth.authenticationSelections as authenticationSelection>
-                    <div class="${properties.kcSelectAuthListItemClass!}"
-                         onclick="fillAndSubmit('${authenticationSelection.authExecId}')">
+<#import "components/layout/container.ftl" as container>
 
+
+<@container.kw >
+    <div class="justify-right flex space-between"
+         style="position: relative;
+         display: flex;
+         height: 100%;
+         align-self: flex-start">
+        <div style="display: flex; ">
+            <img src="${url.resourcesPath}/dist/img/logo_full.png"
+                 alt="senaam logo" style="float: right; margin: 0;">
+        </div>
+    </div>
+    <br>
+    <h1 class="text-right justify-right text-xl"
+        style="margin-bottom: 32px; padding-right: 32px; ">
+        ${msg("loginChooseAuthenticator")}
+    </h1>
+
+    <@layout.registrationLayout
+    displayInfo=false
+    displayRequiredFields=false
+    displayMessage=false;
+    section>
+        <br>
+
+        <#if section = "header" || section = "show-username">
+            <script type="text/javascript">
+                function fillAndSubmit(authExecId) {
+                    document.getElementById('authexec-hidden-input').value = authExecId;
+                    document.getElementById('kc-select-credential-form').submit();
+                }
+            </script>
+        <#elseif section = "form" >
+            <form id="kc-select-credential-form"
+                  style="display: flex;flex-direction: column;justify-content: center;align-items: center;"
+                  class="m-0 space-y-4"
+                  action="${url.loginAction}"
+                  method="post">
+                <#list auth.authenticationSelections as authenticationSelection>
+                    <div onclick="fillAndSubmit('${authenticationSelection.authExecId}')">
                         <@buttonPrimary.kw type="submit">
                             ${msg(authenticationSelection.helpText)}
                         </@buttonPrimary.kw>
-
-                        <#--<div class="${properties.kcSelectAuthListItemIconClass!}">
-                            <i class="${properties['${authenticationSelection.iconCssClass}']!authenticationSelection.iconCssClass} ${properties.kcSelectAuthListItemIconPropertyClass!}"></i>
-                        </div>
-                        <div class="${properties.kcSelectAuthListItemBodyClass!}">
-                            <div class="${properties.kcSelectAuthListItemHeadingClass!}">
-                                ${msg('${authenticationSelection.displayName}')}
-                            </div>
-                            <div class="${properties.kcSelectAuthListItemDescriptionClass!}">
-                                ${msg('${authenticationSelection.helpText}')}
-                            </div>
-                        </div>
-                        <div class="${properties.kcSelectAuthListItemFillClass!}"></div>
-                        <div class="${properties.kcSelectAuthListItemArrowClass!}">
-                            <i class="${properties.kcSelectAuthListItemArrowIconClass!}"></i>
-                        </div>-->
+                        <br>
                     </div>
                 </#list>
                 <input type="hidden" id="authexec-hidden-input" name="authenticationExecution"/>
-            </div>
-        </form>
-
-    </#if>
-</@layout.registrationLayout>
-
+            </form>
+        </#if>
+    </@layout.registrationLayout>
+</@container.kw>
