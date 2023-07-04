@@ -8,11 +8,8 @@
 
 <@layout.registrationLayout
 displayInfo=realm.password && realm.registrationAllowed && !registrationDisabled??
-displayMessage=!messagesPerField.existsError("username", "password")
-;
-section
->
-
+displayMessage=!messagesPerField.existsError("username", "password");
+section>
     <#if section="header">
         ${msg("loginAccountTitle")}
     <#elseif section="form">
@@ -37,6 +34,7 @@ section
                     invalid=["username", "password"]
                     name="username"
                     type="text"
+                    hint="usernameOrEmail"
                     value=(login.username)!''
                     >
                         <@labelUsername.kw />
@@ -48,6 +46,7 @@ section
                     message=false
                     name="password"
                     type="password"
+                    hint="password"
                     >
                         ${msg("password")}
                     </@inputPrimary.kw>
