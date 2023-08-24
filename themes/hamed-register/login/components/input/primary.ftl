@@ -1,4 +1,4 @@
-<#macro kw invalid name autofocus=false disabled=false message=true required=true hint="" rest...>
+<#macro kw invalid name autofocus=false disabled=false message=true required=true hint="" isRtl=true rest...>
     <label class="sr-only" for="${name}">
         <#nested>
     </label>
@@ -8,7 +8,14 @@
         <#if required>required</#if>
             aria-invalid="${messagesPerField.existsError(invalid)?c}"
             class="block border-gray-300 mt-1 rounded-md w-full focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 sm:text-sm"
-            style="width: 315px;"
+            style="width: 315px;
+            direction: rtl;
+            align-content: center ;
+            align-items: center;
+            align-self: center;
+            text-align-all: center;
+            text-align: center;
+            "
             id="${name}"
             name="${name}"
         <#--            placeholder="<#compress><#nested></#compress>"-->
