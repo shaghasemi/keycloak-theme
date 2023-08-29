@@ -40,16 +40,42 @@ section
             </div>
             <div>
                 <@inputPrimary.kw
+                class="${properties.kcInputClass!}"
+                id="user.attributes.mobile_number"
+                name="user.attributes.mobile_number"
+                value="${(register.formData['user.attributes.mobile_number']!'')}"
                 autocomplete="phone_number"
                 invalid=["phoneNumber"]
-                name="phoneNumber"
                 hint="phoneNumber"
                 type="text"
-                value=(register.formData.phoneNumber)!''
                 >
                     ${msg("phoneNumber")}
                 </@inputPrimary.kw>
             </div>
+            <#--<div class="${properties.kcFormGroupClass!}">
+                <div class="${properties.kcLabelWrapperClass!}">
+                    <label for="user.attributes.mobile_number" class="${properties.kcLabelClass!}">
+                        Date of birth</label>
+                </div>
+
+                <div class="${properties.kcInputWrapperClass!}">
+                    <input type="date" class="${properties.kcInputClass!}"
+                           id="user.attributes.mobile_number" name="user.attributes.dob"
+                           value="${(register.formData['user.attributes.mobile_number']!'')}"/>
+                </div>
+            </div>-->
+            <#--<div class="${properties.kcFormGroupClass!}">
+                <div class="${properties.kcLabelWrapperClass!}">
+                    <label for="user.attributes.dob" class="${properties.kcLabelClass!}">
+                        Date of birth</label>
+                </div>
+
+                <div class="${properties.kcInputWrapperClass!}">
+                    <input type="date" class="${properties.kcInputClass!}"
+                           id="user.attributes.dob" name="user.attributes.dob"
+                           value="${(register.formData['user.attributes.dob']!'')}"/>
+                </div>
+            </div>-->
             <#--<div>
                 <@inputPrimary.kw
                 autocomplete="phone"
@@ -67,7 +93,7 @@ section
                     <@inputPrimary.kw
                     autocomplete="username"
                     invalid=["username"]
-                    name="usernameOrEmail"
+                    name="username"
                     hint="usernameOrEmail"
                     type="text"
                     value=(register.formData.username)!''
@@ -110,6 +136,10 @@ section
                 <@buttonPrimary.kw type="submit">
                     ${msg("doRegister")}
                 </@buttonPrimary.kw>
+            </div>
+            <div id="kc-form-buttons" class="${properties.kcFormButtonsClass!}">
+                <input class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonBlockClass!} ${properties.kcButtonLargeClass!}"
+                       type="submit" value="${msg("doRegister")}"/>
             </div>
         </form>
     <#elseif section="nav">
