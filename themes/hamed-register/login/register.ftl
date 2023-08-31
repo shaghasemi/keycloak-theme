@@ -48,6 +48,8 @@ section
                 invalid=["phoneNumber"]
                 hint="phoneNumber"
                 type="text"
+                minLength="11"
+                onInvaliddd="Invaaaaaaliiiiiiid"
                 >
                     ${msg("phoneNumber")}
                 </@inputPrimary.kw>
@@ -148,3 +150,23 @@ section
         </@linkSecondary.kw>
     </#if>
 </@layout.registrationLayout>
+
+<script>
+    function validateCustomField() {
+        var customField = document.getElementById('mobile_number');
+        var errorElement = document.getElementById('custom-field-error');
+
+        // Add your custom validation logic here
+        if (customField.value.length < 5) {
+            errorElement.textContent = 'Custom field must be at least 5 characters long.';
+        } else {
+            errorElement.textContent = '';
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var customField = document.getElementById('mobile_number');
+        customField.addEventListener('input', validateCustomField);
+    });
+</script>
+

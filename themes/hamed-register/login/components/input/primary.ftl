@@ -1,4 +1,13 @@
-<#macro kw invalid name autofocus=false disabled=false message=true required=true hint="" isRtl=true rest...>
+<#macro kw invalid name
+autofocus=false
+disabled=false
+message=true
+required=true
+hint=""
+isRtl=true
+onInvalid=""
+minLength=""
+rest...>
     <label class="sr-only" for="${name}">
         <#nested>
     </label>
@@ -18,10 +27,9 @@
             "
             id="${name}"
             name="${name}"
-        <#--            placeholder="<#compress><#nested></#compress>"-->
-        <#--            placeholder="${hint}"-->
             placeholder="${msg("${hint}")}"
-<#--            placeholder="${msg("authenticatorCode")}"-->
+            oninvalid="${onInvalid}"
+            minlength="${minLength}"
     <#list rest as attrName, attrValue>
         ${attrName}="${attrValue}"
     </#list>
