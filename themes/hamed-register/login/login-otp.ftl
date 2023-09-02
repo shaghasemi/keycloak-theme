@@ -40,7 +40,7 @@
                 </@inputPrimary.kw>
                 <div class="space-y-4">
                     <#--    <#nested>-->
-                    footerrrrrr
+<#--                    footerrrrrr-->
                 </div>
             </div>
             <div class="pt-4" style="display: flex;justify-content: center;align-items: center;">
@@ -51,6 +51,12 @@
                     ${msg("doLogIn")}
                 </@buttonPrimary.kw>
             </div>
+            <form action="${url.registrationUrl}" class="flex justify-center" method="post">
+                <input name="doRegister" type="hidden" value="on"/>
+                <@buttonSecondary.kw type="submit">
+                    ${msg("doRegister")}
+                </@buttonSecondary.kw>
+            </form>
         </form>
     </#if>
 </@layout.registrationLayout>

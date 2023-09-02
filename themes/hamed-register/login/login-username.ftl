@@ -1,6 +1,7 @@
 <#import "template.ftl" as layout>
 <#import "components/provider.ftl" as provider>
 <#import "components/button/primary.ftl" as buttonPrimary>
+<#import "components/button/secondary.ftl" as buttonSecondary>
 <#import "components/checkbox/primary.ftl" as checkboxPrimary>
 <#import "components/input/primary.ftl" as inputPrimary>
 <#import "components/label/username.ftl" as labelUsername>
@@ -70,9 +71,15 @@ section
         <#if realm.password && realm.registrationAllowed && !registrationDisabled??>
             <div class="text-center">
                 ${msg("noAccount")}
-                <@linkPrimary.kw href=url.registrationUrl>
+                <#--<@linkPrimary.kw href=url.registrationUrl>
                     ${msg("doRegister")}
-                </@linkPrimary.kw>
+                </@linkPrimary.kw>-->
+                <form action="${url.registrationUrl}" class="flex justify-center" method="post">
+                    <input name="doRegister" type="hidden" value="on"/>
+                    <@buttonSecondary.kw type="submit">
+                        ${msg("doRegister")}
+                    </@buttonSecondary.kw>
+                </form>
             </div>
         </#if>
     </#if>

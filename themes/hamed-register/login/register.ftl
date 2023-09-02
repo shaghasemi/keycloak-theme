@@ -139,10 +139,10 @@ section
                     ${msg("doRegister")}
                 </@buttonPrimary.kw>
             </div>
-            <div id="kc-form-buttons" class="${properties.kcFormButtonsClass!}">
+            <#--<div id="kc-form-buttons" class="${properties.kcFormButtonsClass!}">
                 <input class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonBlockClass!} ${properties.kcButtonLargeClass!}"
                        type="submit" value="${msg("doRegister")}"/>
-            </div>
+            </div>-->
         </form>
     <#elseif section="nav">
         <@linkSecondary.kw href=url.loginUrl>
