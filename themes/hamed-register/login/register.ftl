@@ -54,7 +54,7 @@ section
                 maxLen="11"
                 hasPattern=true
                 pattern="[0][9][0-9]{9}"
-<#--                                pattern="0\W*9\W*(?:\d\W*){9}"-->
+                <#--                                pattern="0\W*9\W*(?:\d\W*){9}"-->
                 <#--                pattern="[789][0-9]{9}"-->
                 >
                     ${msg("phoneNumber")}
@@ -130,6 +130,7 @@ section
                     name="password"
                     hint="password"
                     type="password"
+                    minLength="6"
                     >
                         ${msg("password")}
                     </@inputPrimary.kw>
@@ -141,6 +142,7 @@ section
                     name="password-confirm"
                     hint="passwordConfirm"
                     type="password"
+                    minLength="6"
                     >
                         ${msg("passwordConfirm")}
                     </@inputPrimary.kw>
