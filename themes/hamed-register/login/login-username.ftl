@@ -52,6 +52,7 @@ section
                         </@checkboxPrimary.kw>
                     </#if>
                     <#if realm.resetPasswordAllowed>
+
                         <@linkPrimary.kw href=url.loginResetCredentialsUrl>
                             <span class="text-sm">${msg("doForgotPassword")}</span>
                         </@linkPrimary.kw>

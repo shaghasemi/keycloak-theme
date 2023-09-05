@@ -7,6 +7,9 @@ hint=""
 isRtl=true
 onInvalid=""
 minLength=""
+maxLength=""
+hasPattern=false
+pattern=""
 rest...>
     <label class="sr-only" for="${name}">
         <#nested>
@@ -30,6 +33,8 @@ rest...>
             placeholder="${msg("${hint}")}"
             oninvalid="${onInvalid}"
             minlength="${minLength}"
+            maxLength="${maxLength}"
+            <#if hasPattern>pattern="${pattern}"</#if>
     <#list rest as attrName, attrValue>
         ${attrName}="${attrValue}"
     </#list>

@@ -22,6 +22,7 @@ section
                 type="text"
                 isRtl=true
                 value=(register.formData.firstName)!''
+                minLength="3"
                 >
                     ${msg("firstName")}
                 </@inputPrimary.kw>
@@ -34,8 +35,9 @@ section
                 hint="lastName"
                 type="text"
                 value=(register.formData.lastName)!''
+                minLength="3"
                 >
-                    ${msg("lastName")}
+                    ${msg("lastName")}v
                 </@inputPrimary.kw>
             </div>
             <div>
@@ -49,11 +51,22 @@ section
                 hint="phoneNumber"
                 type="text"
                 minLength="11"
-                onInvaliddd="Invaaaaaaliiiiiiid"
+                maxLen="11"
+                hasPattern=true
+                pattern="[0][9][0-9]{9}"
+<#--                                pattern="0\W*9\W*(?:\d\W*){9}"-->
+                <#--                pattern="[789][0-9]{9}"-->
                 >
                     ${msg("phoneNumber")}
                 </@inputPrimary.kw>
             </div>
+
+            <#--<#if message && messagesPerField.existsError(invalid)>
+                <div class="mt-2 text-red-600 text-sm">
+                    ${kcSanitize(messagesPerField.getFirstError(invalid))?no_esc}
+                </div>
+            </#if>-->
+
             <#--<div class="${properties.kcFormGroupClass!}">
                 <div class="${properties.kcLabelWrapperClass!}">
                     <label for="user.attributes.mobile_number" class="${properties.kcLabelClass!}">
@@ -99,6 +112,10 @@ section
                     hint="usernameOrEmail"
                     type="text"
                     value=(register.formData.username)!''
+                    minLength="10"
+                    maxLen="10"
+                    hasPattern=true
+                    pattern="[0-9]{10}"
                     >
                         ${msg("usernameOrEmail")}
                     </@inputPrimary.kw>
@@ -119,10 +136,10 @@ section
                 </div>
                 <div>
                     <@inputPrimary.kw
-                    autocomplete="new-password"
+                    autocomplete="confirm-password"
                     invalid=["password-confirm"]
                     name="password-confirm"
-                    hint="password-confirm"
+                    hint="passwordConfirm"
                     type="password"
                     >
                         ${msg("passwordConfirm")}
