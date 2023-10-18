@@ -376,6 +376,13 @@ select {
     --tw-shadow-colored: 0 0 #0000
 }
 
+.password-reveal {
+    color: #5500B3;
+    margin-left: -40px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
 .container {
     width: 100%
 }

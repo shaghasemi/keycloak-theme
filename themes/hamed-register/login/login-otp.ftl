@@ -11,7 +11,7 @@
              alt="senaam logo" style="float: right; margin: 0;">
     </div>
     <#if section="header">
-        ${msg("doLogIn")}
+<#--        ${msg("doLogIn")}-->
     <#elseif section="form">
         <form action="${url.loginAction}" class="m-0 space-y-4" method="post">
             <#if otpLogin.userOtpCredentials?size gt 1>

@@ -46,12 +46,16 @@ section>
                     invalid=["username", "password"]
                     message=false
                     name="password"
+                    <#--                    name="Password"-->
                     type="password"
                     hint="password"
+                    id="Password"
+                    onclick="togglePassword()"
                     >
                         ${msg("password")}
                     </@inputPrimary.kw>
                 </div>
+                <input class="form-control" type="checkbox" onclick="togglePassword()"/>
                 <div class="flex items-center"
                      style="display: flex; justify-between: center; align-items: center; gap: 43px;">
                     <#if realm.rememberMe && !usernameEditDisabled??>
@@ -92,3 +96,14 @@ section>
         </#if>
     </#if>
 </@layout.registrationLayout>
+
+<script>
+    function togglePassword() {
+        var type = document.getElementById("password").type;
+        if (type == 'password') {
+            document.getElementById("password").type = "text";
+        } else {
+            document.getElementById("password").type = "password";
+        }
+    }
+</script>
