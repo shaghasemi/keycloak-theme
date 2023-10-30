@@ -41,21 +41,22 @@ section>
                         <@labelUsername.kw />
                     </@inputPrimary.kw>
                 </div>
+                <p>
                 <div>
                     <@inputPrimary.kw
                     invalid=["username", "password"]
                     message=false
                     name="password"
-                    <#--                    name="Password"-->
                     type="password"
                     hint="password"
-                    id="Password"
-                    onclick="togglePassword()"
+<#--                    onclick="togglePassword()"-->
                     >
                         ${msg("password")}
                     </@inputPrimary.kw>
                 </div>
-                <input class="form-control" type="checkbox" onclick="togglePassword()"/>
+                <i class="fa-solid fa-eye" id="eye"></i>
+<#--                <input class="form-control" type="checkbox" onclick="togglePassword()"/>-->
+                </p>
                 <div class="flex items-center"
                      style="display: flex; justify-between: center; align-items: center; gap: 43px;">
                     <#if realm.rememberMe && !usernameEditDisabled??>
