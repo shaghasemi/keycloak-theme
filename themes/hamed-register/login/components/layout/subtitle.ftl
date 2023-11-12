@@ -8,9 +8,9 @@
     </div>
     <br>
 <#--    <br>-->
-    <h1 class="text-right justify-right text-xl"
+    <#--<h1 class="text-right justify-right text-xl"
         style="margin-bottom: 32px; padding-right: 32px; ">
         ورود
-    </h1>
+    </h1>-->
 
 </#macro>

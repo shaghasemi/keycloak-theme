@@ -7,6 +7,14 @@
 <#import "components/label/username.ftl" as labelUsername>
 <#import "components/link/primary.ftl" as linkPrimary>
 
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Toggle Password Visibility</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+
 <@layout.registrationLayout
 displayInfo=realm.password && realm.registrationAllowed && !registrationDisabled??
 displayMessage=!messagesPerField.existsError("username", "password");
@@ -37,11 +45,11 @@ section>
                     type="text"
                     hint="usernameOrEmail"
                     value=(login.username)!''
+                    isRtl=false
                     >
                         <@labelUsername.kw />
                     </@inputPrimary.kw>
                 </div>
-                <p>
                 <div>
                     <@inputPrimary.kw
                     invalid=["username", "password"]
@@ -49,14 +57,13 @@ section>
                     name="password"
                     type="password"
                     hint="password"
-<#--                    onclick="togglePassword()"-->
+                    id="password"
+                    isRtl=false
+                    hasToggleVisibility=true
                     >
                         ${msg("password")}
                     </@inputPrimary.kw>
                 </div>
-                <i class="fa-solid fa-eye" id="eye"></i>
-<#--                <input class="form-control" type="checkbox" onclick="togglePassword()"/>-->
-                </p>
                 <div class="flex items-center"
                      style="display: flex; justify-between: center; align-items: center; gap: 43px;">
                     <#if realm.rememberMe && !usernameEditDisabled??>
